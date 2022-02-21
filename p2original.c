@@ -16,7 +16,7 @@ int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
 }
 void output(float x1, float y1, float x2, float y2,float x3, float y3, int istriangle)
 {
-  if(istriangle==0){
+  if(fabs(istriangle) < 0.000001){
     printf("triangle not possible");
     }
     else if(istriangle!=0){
@@ -27,6 +27,7 @@ int main()
 {
    float x1,y1,x2,y2,x3,y3,istriangle;
   input_line(&x1,&y1,&x2,&y2,&x3,&y3);
-  x1=is_triangle();
-  y1=
+  is_triangle(x1,y1,x2,y2,x3,y3);
+  output(x1,y1,x2,y2,x3,y3,istriangle);
+  return 0;
 }
