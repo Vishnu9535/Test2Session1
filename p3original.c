@@ -6,15 +6,16 @@ int input_number()
   scanf("%d",&n);
   return n;
 }
-void is_prime(int n)
+int is_prime(int n)
 {
-  int i,sum=0
-  for(i=1;i<=n,i++)
+  int i,sum=0;
+  for(i=1;i<=n;i++)
     {
       if(n%i==0){
         sum++;
       }
     }
+  return sum;
 }
 void output(int n, int sum){
   if(sum==2){
@@ -27,7 +28,7 @@ void output(int n, int sum){
 int main(){
   int n,sum;
   n=input_number();
-  is_prime(n);
+  sum=is_prime(n);
   output(n,sum);
   return 0;
 }
