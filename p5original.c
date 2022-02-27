@@ -15,8 +15,9 @@ void init_array(int n, int a[n])
 }
 void erotosthenes_sieve(int n, int a[n])
 {
-  int k=2;
-  while(k<=sqrt(n)){ 
+  int k=2,y;
+  y=sqrt(n);
+  while(k<=y){ 
           for(int i = 2; n >= k*i; i++){
            a[k*i] = 1;
            }
