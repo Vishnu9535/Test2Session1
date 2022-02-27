@@ -8,6 +8,7 @@ int input_array_size(){
 }
 void init_array(int n, int a[n])
 {
+  int i;
   for(i=2;i<=n;i++){
     a[i]=0;
     }
@@ -15,15 +16,16 @@ void init_array(int n, int a[n])
 void erotosthenes_sieve(int n, int a[n])
 {
   int k=2;
-  while(k <= sqrt(n)){ 
-          for(i = 2; n >= k*i; i++){
+  while(k<=sqrt(n)){ 
+          for(int i = 2; n >= k*i; i++){
            a[k*i] = 1;
            }
           k++; 
       }
+  }
   void out_put(int n, int a[n])
   {
-    for(i = 2; i <= n; i++) { 
+    for(int i = 2; i <= n; i++) { 
           if(a[i] == 0) {
              printf("the numbers are %d\n",i);
           }
