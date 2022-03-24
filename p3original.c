@@ -2,33 +2,36 @@
 int input_number()
 {
   int n;
-  printf("Enter a number");
+  printf("enter a number");
   scanf("%d",&n);
   return n;
 }
 int is_prime(int n)
 {
-  int i,sum=0;
-  for(i=1;i<=n;i++)
-    {
-      if(n%i==0){
-        sum++;
-      }
+  int prime=0;
+  for(int i=2;i<n;i++){
+    if(n%i==0){
+      prime=1;
     }
-  return sum;
+  }
+  return prime;
 }
-void output(int n, int sum){
-  if(sum==2){
-    printf("number is prime");    
+void output(int n, int prime)
+{
+if(prime ==1){
+  printf("its not a prime number");
   }
   else{
-    printf("number is not prime");
+    printf("its a prime number");
+    
   }
 }
-int main(){
-  int n,sum;
+int main()
+{
+  int n,prime;
   n=input_number();
-  sum=is_prime(n);
-  output(n,sum);
+  prime=is_prime(n);
+  output(n,prime);
   return 0;
+  
 }
