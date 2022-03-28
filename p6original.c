@@ -1,37 +1,39 @@
 #include<stdio.h>
-void input_string(char str[],char substr[])
+#include<string.h>
+void input_string(char string[],char substring[])
 {
-  printf("enter the first string");
-  scanf("%s",str);
-  printf("enter the second string");
-  scanf("%s",substr);
+   printf("input the string ");
+   fgets(string,30,stdin);
+   printf("enter the substring ");
+   fgets(substring,20,stdin);
+   
 }
-int str_reverse(char str[],char substr[])
+int str_index(char string[], char substring[])
 {
-  int index = -1;
-    for (int i = 0; str[i] != '\0'; i++) {
-        index = -1;
-        for (int j = 0; substr[j] != '\0'; j++) {
-            if (str[i + j] != substr[j]) {
-                index = -1;
-                break;
-            }
-            index = i;
+   int index=0;
+   for(int i=0;string[i]!='\0';i++)
+    {
+      if(substring[0]==string[i])
+      {
+         index=i;
+        break;
+        
         }
-        if (index != -1) {
-            break;
-        }
-    }
-  return index;
+      
+   }
+   
+   return index;
 }
-void output(char str[],char substr[],int index){
-  printf("index of the string is %d\n",index);
+void output(char string[], char substring[], int index)
+{
+   printf("the index of the substring is %d",index);
 }
 int main(){
-  char str[30],substr[30];
-  input_string(str,substr);
-  int index;
-  index=str_reverse(str,substr);
-  output(str,substr,index);
-  return 0;
+   int index;
+   char string[30];
+   char substring[20];
+   input_string(string,substring);
+   index=str_index(string,substring);
+   output(string,substring,index);
+   return 0;
 }
