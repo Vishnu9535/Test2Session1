@@ -20,7 +20,7 @@ line input_line(){
         return l;
 }
 void find_lenght(line *l){
-    l->distance=sqrt(((l->p1.x - l->p2.x)(l->p1.x - l->p2.x))+((l->p1.y - l->p2.y)(l->p1.y - l->p2.y)));
+    l->distance=sqrt(((l->p1.x - l->p2.x)*(l->p1.x - l->p2.x))+((l->p1.y - l->p2.y)*(l->p1.y - l->p2.y)));
 }
 void output(line *l){
     printf("The length of the line is %f",l->distance);
