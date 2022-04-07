@@ -8,7 +8,7 @@ void input_line(float *x1, float *y1 ,float *x2, float *y2,float *x3, float *y3)
   printf("enter third points");
   scanf("%f %f",x3,y3);
 }
-int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
+float is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
 { 
   float istriangle;
   istriangle=0.5*((x1*(y2-y3))+(x2*(y3-y1))+(x3*(y1-y2)));
